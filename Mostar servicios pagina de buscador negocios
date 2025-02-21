@@ -1,0 +1,27 @@
+<!-- SERVICIOS DESPUÉS -->
+                    <?php
+                    $_menu = get_post_meta(get_the_ID(), '_menu', true);
+
+                    if (!empty($_menu) && is_array($_menu)) {
+                        $service_count = 0;
+                        echo '<ul class="listing-services">';
+
+                        foreach ($_menu as $menu) {
+                            if (!empty($menu['menu_elements'])) {
+                                foreach ($menu['menu_elements'] as $item) {
+                                    if ($service_count < 3) { // Mostrar solo los primeros tres servicios
+                                        echo '<li><strong>' . esc_html($item['name']) . '</strong>';
+                                        if (!empty($item['price'])) {
+                                            echo '<span class="price">' . esc_html($item['price']) . ' €</span>';
+                                        }
+                                        echo '</li>';
+                                        $service_count++;
+                                    }
+                                }
+                            }
+                            if ($service_count >= 3) break; // Salir del bucle después de 3 elementos
+                        }
+                        echo '</ul>';
+                    }
+                    ?>
+                    <!-- Fin de servicios -->
