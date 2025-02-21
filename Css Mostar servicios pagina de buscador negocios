@@ -1,0 +1,34 @@
+/* Asegura que los servicios estén en fila y el precio alineado */
+.listing-services li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Ajusta el estilo del precio */
+.listing-services li .price {
+    font-weight: bold;
+    color: black;
+    min-width: 60px; /* Fija un ancho mínimo para alinear correctamente */
+    text-align: right; /* Alinea los precios a la derecha */
+    white-space: nowrap; /* Evita que el símbolo € se mueva a otra línea */
+    display: flex;
+    align-items: center; /* Asegura que el precio y el símbolo € estén alineados */
+}
+
+/* Asegura que el texto del servicio sea negro */
+.listing-services li strong {
+    color: black;
+    font-weight: bold;
+}
+
+/* Agrega espacio entre las reseñas y los servicios */
+.listing-services {
+    margin-top: 20px; /* Ajusta este valor según necesites más separación */
+}
+
+.listing-item-container {
+    min-height: 200px; /* Ajusta el valor según lo necesites */
+    padding: 20px; /* Añade más espacio interno */
+}
