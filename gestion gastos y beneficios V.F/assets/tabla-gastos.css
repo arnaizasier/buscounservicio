@@ -1,0 +1,188 @@
+.tabla-gastos-beneficios {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tabla-gastos-beneficios th,
+.tabla-gastos-beneficios td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-gastos-beneficios th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.tabla-gastos-beneficios tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos específicos para filas de ingresos y gastos */
+.tabla-gastos-beneficios tr.ingreso td:nth-child(2),
+.tabla-gastos-beneficios tr.gasto td:nth-child(2) {
+    color: #000000 !important; /* Color negro para todas las cantidades */
+    font-weight: 500;
+}
+
+/* Estilos para el selector de meses */
+.selector-meses {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#historial-meses {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+/* Estilos para el botón de eliminar */
+.boton-eliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para la paginación */
+.paginacion {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.paginacion a,
+.paginacion span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #495057;
+}
+
+.paginacion .pagina-actual {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.paginacion a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mensaje cuando no hay registros */
+.sin-registros {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: #6c757d;
+}
+
+.controles-tabla {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filtro-tipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtro-tipo select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.filtro-tipo label {
+    font-weight: 500;
+    color: #495057;
+}
+
+
+/* Por defecto, la tabla se muestra normal en escritorio */
+.tabla-scroll {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la tabla */
+.tabla-gastos-beneficios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos para las celdas */
+.tabla-gastos-beneficios th,
+.tabla-gastos-beneficios td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Aplicar scroll horizontal solo en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .tabla-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tabla-gastos-beneficios {
+        min-width: 800px; /* Ancho mínimo solo en móviles */
+    }
+    
+    .tabla-gastos-beneficios th,
+    .tabla-gastos-beneficios td {
+        white-space: nowrap;
+    }
+}
+
+/* Controles responsivos */
+.controles-tabla {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .selector-meses,
+    .filtro-tipo {
+        flex: 1 1 100%;
+    }
+    
+    .selector-meses select,
+    .filtro-tipo select {
+        width: 100%;
+        padding: 8px;
+    }
+}
